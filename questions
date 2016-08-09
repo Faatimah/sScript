@@ -2,8 +2,8 @@ var RecommenderViewOnGame = function(agent)
 {
 	// need to get the state of the recommender
 	// 			1. Is he a leader
-	// 			2. is he a follower, MBRL or follower
-	// 			3. 
+	// 			2. Is he a follower, MBRL or follower
+	// 			3. Is he pure/alt/fair/bully
 
 	// get the expert state
 	// get the round number
@@ -19,7 +19,7 @@ var RecommenderViewOnGame = function(agent)
 		var thresholdRound = 10;
 		if(round == 0)
 		{
-			opponentInfo.push('I can\'t say anything about the other player.');
+			opponentInfo.push('I can\'t say anything about your associate.');
 			opponentInfo.push('The game has just started');
 		}
 		else
@@ -30,7 +30,7 @@ var RecommenderViewOnGame = function(agent)
 			var reciprocateDefection = properties.reciprocateDefection;
 			if(round < thresholdRound)
 			{
-				opponentInfo.push('The game is still quite fresh');
+				opponentInfo.push('It\'s still early in the game');
 				opponentInfo.push('I can\'t really say anything about the other player');
 				return opponentInfo;
 			}
