@@ -1,164 +1,45 @@
 //MASTER EXPERT META-ALGORITHM
 
 var EVENTS = {
-    's': 'satisfied',
-    'f': 'forgives',
-    'd': 'defects',
-    'g': 'guilty',
-    'p': 'punished',
-    'u': 'failed to punish'
+    'n': 'new expert selected and not guilty',
+    'ng': 'new expert selected and guilty',
+    'nb': 'new expert selected and better payoffs possible'
+    'ngb': 'new expert, guilty and better payoffs possible'
 };
 
 //Make into a constant to prevent modifications
 Object.freeze(EVENTS);
 
 var MESSAGES = [
-    'Do as I say, or I\'ll punish you',
-    'I accept your last proposal',
-    'I don\t accept your last proposal',
-    'That\s not fair',
-    'I don\t trust you',
-    'Excellent!',
-    'Sweet. We are getting rich',
-    'Give me another chance',
-    'Okay. I forgive you',
-    'I\'m changing my strategy',
-    'We can both do better than this',
-    'Curse you',
-    'You betrayed me',
-    'You will pay for this!',
-    'In your face!',
-    'Let\'s always play {0}',
-    'This round\, let\'s play {0}',
-    'Don\'t play {0}',
-    'Let\'s alternate between {0} and {1}',
+    'Here is the strategy',
+    'Let\'s try something different',
+    'How about trying a new strategy',
+    'You can both do better than this',
 ];
 
-//Used by S0 to always transition to S1 and also S8
+//Not used here
 var CATCH_ALL_EVENT = 'ALL';
 
 //Transition maps
 var PURE_LEADER_TRANSITION_MAP = {
     'S0': {
-        'ALL': {
-            messageIds: [15],
-            endState: 'S1'
-        }
-    },
-    'S1': {
-        'd': {
-            randMessageIds: [11, 12],
+        'n': {
+            messageIds: [1],
+            endState: 'S0'
+        },
+        'ng': {
+            randMessageIds: [2, 3],
             messageIds: [],
-            endState: 'S2'
+            endState: 'S0'
         },
-        'g': {
-            randMessageIds: [11, 12],
-            messageIds: [13],
-            endState: 'S7'
+        'nb': {
+            messageIds: [1, 4],
+            endState: 'S0'
         },
-        's': {
-            messageIds: [5],
-            endState: 'S2'
-        }
-    },
-    'S2': {
-        'd': {
-            randMessageIds: [11, 12],
-            messageIds: [],
-            endState: 'S2'
-        },
-        'g': {
-            randMessageIds: [11, 12],
-            messageIds: [13],
-            endState: 'S7'
-        },
-        's': {
-            messageIds: [5],
-            endState: 'S3'
-        }
-    },
-    'S3': {
-        'd': {
-            randMessageIds: [11, 12],
-            messageIds: [],
-            endState: 'S2'
-        },
-        'g': {
-            randMessageIds: [11, 12],
-            messageIds: [13],
-            endState: 'S7'
-        },
-        's': {
-            messageIds: [5],
-            endState: 'S4'
-        }
-    },
-    'S4': {
-        'd': {
-            randMessageIds: [11, 12],
-            messageIds: [],
-            endState: 'S2'
-        },
-        'g': {
-            randMessageIds: [11, 12],
-            messageIds: [13],
-            endState: 'S7'
-        },
-        's': {
-            messageIds: [],
-            endState: 'S5'
-        }
-    },
-    'S5': {
-        'd': {
-            randMessageIds: [11, 12],
-            messageIds: [],
-            endState: 'S2'
-        },
-        'g': {
-            randMessageIds: [11, 12],
-            messageIds: [13],
-            endState: 'S7'
-        },
-        's': {
-            messageIds: [6],
-            endState: 'S6'
-        }
-    },
-    'S6': {
-        'd': {
-            randMessageIds: [11, 12],
-            messageIds: [],
-            endState: 'S2'
-        },
-        'g': {
-            randMessageIds: [11, 12],
-            messageIds: [13],
-            endState: 'S7'
-        },
-        's': {
-            messageIds: [],
-            endState: 'S6'
-        }
-    },
-    'S7': {
-        'f': {
-            messageIds: [14, 8],
-            endState: 'S8'
-        },
-        'u': {
-            messageIds: [],
-            endState: 'S7'
-        },
-        'p': {
-            messageIds: [14],
-            endState: 'S7'
-        }
-    },
-    'S8': {
-        'ALL': {
-            messageIds: [15],
-            endState: 'S3'
+        'ngb': {
+            randMessageIds: [2,3],
+            messageIds: [4],
+            endState: 'S0'
         }
     }
 };
