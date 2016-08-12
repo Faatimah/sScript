@@ -120,7 +120,7 @@ FSM.prototype.getHistory = function () {
     return logs.join('\n');
 }
 
-var f = new FSM('S0', PURE_LEADER_TRANSITION_MAP);
+var f = new FSM('S0', MINMAX_TRANSITION_MAP);
 
 //Trace out path S0-> S1-> S2 ->S7->S8->S3->S4->S2->S3
 f.transition('f'); //S1
