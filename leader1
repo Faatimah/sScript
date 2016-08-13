@@ -1,16 +1,23 @@
 //LEADER1 EXPERT (Pure and Fair)
 
 var EVENTS = {
-    's': 'satisfied',
-    'd': 'defects',
-    'g': 'guilty'
+    'c1': 'player complied',
+    'c2': 'associate complied',
+    'nc1': 'player did not comply',
+    'nc2': 'associate did not comply',
+    's': 'player is satisfied',
+    'g': ' associate is guilty'
 };
 
+// check nc1 first, if player did not comply than no need to check on the opponent
+// if player however complied, then we check associates' compliance next
 //Make into a constant to prevent modifications
 Object.freeze(EVENTS);
 
 var MESSAGES = [
     'Always play C',
+    'You did not follow my previous suggestion',
+    'You refused to follow my guidance',
     'Your associate did not comply',
     'Your associate refused to follow your lead',
     'He/she deserves to be punished!',
@@ -34,99 +41,129 @@ var PURE_LEADER_TRANSITION_MAP = {
         }
     },
     'S1': {
-        'd': {
+        'nc1': {
             randMessageIds: [1, 2],
-            messageIds: [9],
+            messageIds: 11],
+            endState: 'S1'
+        },
+        'nc2': {
+            randMessageIds: [3, 4],
+            messageIds: [11],
             endState: 'S2'
         },
         'g': {
-            randMessageIds: [1, 2],
-            messageIds: [3,9],
-            endState: 'S7'
+            randMessageIds: [3, 4],
+            messageIds: [5, 11],
+            endState: 'S6'
         },
         's': {
-            messageIds: [4, 9],
+            messageIds: [6, 11],
             endState: 'S2'
         }
     },
     'S2': {
-        'd': {
+        'nc1': {
             randMessageIds: [1, 2],
-            messageIds: [9],
+            messageIds: 11],
+            endState: 'S1'
+        },
+        'nc2': {
+            randMessageIds: [3, 4],
+            messageIds: [11],
             endState: 'S2'
         },
         'g': {
-            randMessageIds: [1, 2],
-            messageIds: [3, 9],
-            endState: 'S7'
+            randMessageIds: [3, 4],
+            messageIds: [5,11],
+            endState: 'S6'
         },
         's': {
-            messageIds: [4, 9],
+            messageIds: [6, 11],
             endState: 'S3'
         }
     },
     'S3': {
-        'd': {
+        'nc1': {
             randMessageIds: [1, 2],
-            messageIds: [9],
+            messageIds: 11],
+            endState: 'S1'
+        },
+        'nc2': {
+            randMessageIds: [3, 4],
+            messageIds: [11],
             endState: 'S2'
         },
         'g': {
-            randMessageIds: [1, 2],
-            messageIds: [3, 9],
-            endState: 'S7'
+            randMessageIds: [3, 4],
+            messageIds: [5, 11],
+            endState: 'S6'
         },
         's': {
-            randMessageIds: [5, 6],
-            messageIds: [9],
+            randMessageIds: [7, 8],
+            messageIds: [11],
             endState: 'S4'
         }
     },
     'S4': {
-        'd': {
+        'nc1': {
             randMessageIds: [1, 2],
-            messageIds: [9],
+            messageIds: 11],
+            endState: 'S1'
+        },
+        'nc2': {
+            randMessageIds: [3, 4],
+            messageIds: [11],
             endState: 'S2'
         },
         'g': {
-            randMessageIds: [1, 2],
-            messageIds: [3, 9],
-            endState: 'S7'
+            randMessageIds: [3, 4],
+            messageIds: [5, 11],
+            endState: 'S6'
         },
         's': {
-            messageIds: [6, 7, 9],
+            messageIds: [8, 9, 11],
             endState: 'S5'
         }
     },
     'S5': {
-        'd': {
+        'nc1': {
             randMessageIds: [1, 2],
-            messageIds: [9],
+            messageIds: 11],
+            endState: 'S1'
+        },
+        'nc2': {
+            randMessageIds: [3, 4],
+            messageIds: [11],
             endState: 'S2'
         },
         'g': {
-            randMessageIds: [1, 2],
-            messageIds: [3, 9],
-            endState: 'S7'
+            randMessageIds: [3, 4],
+            messageIds: [5, 11],
+            endState: 'S6'
         },
         's': {
-            randMessageIds: [6, 7],
-            messageIds: [9],
+            randMessageIds: [8, 9],
+            messageIds: [11],
             endState: 'S5'
         }
     },
-    'S7': {
-        'd': {
+    'S6': {
+        'nc1': {
             randMessageIds: [1, 2],
-            messageIds: [9],
-            endState: 'S7'
+            messageIds: 11],
+            endState: 'S1'
+        },
+        'nc2': {
+            randMessageIds: [3, 4],
+            messageIds: [11],
+            endState: 'S6'
         },
         'g': {
-            messageIds: [9],
-            endState: 'S7'
+            messageIds: [11],
+            endState: 'S6'
         },
         's': {
-            messageIds: [8],
+            messageIds: [10, 11],
             endState: 'S3'
         }
     }
