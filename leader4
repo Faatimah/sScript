@@ -160,7 +160,7 @@ var PURE_LEADER_TRANSITION_MAP = {
             endState: 'S6'
         },
         's': {
-            messageIds: [10],
+            messageIds: [10, 11],
             endState: 'S3'
         }
     }
