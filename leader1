@@ -1,8 +1,6 @@
 //LEADER1 EXPERT (Pure and Fair)
 
 var EVENTS = {
-    'c1': 'player complied',
-    'c2': 'associate complied',
     'nc1': 'player did not comply',
     'nc2': 'associate did not comply',
     's': 'player is satisfied',
