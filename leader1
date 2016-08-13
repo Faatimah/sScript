@@ -31,7 +31,7 @@ var MESSAGES = [
 var CATCH_ALL_EVENT = 'ALL';
 
 //Transition maps
-var PURE_LEADER_TRANSITION_MAP = {
+var LEADER1_TRANSITION_MAP = {
     'S0': {
         'ALL': {
             messageIds: [0],
