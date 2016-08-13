@@ -23,20 +23,31 @@ var CATCH_ALL_EVENT = 'ALL';
 
 //Transition maps
 var MBRL_TRANSITION_MAP = {
-      'S0': {
+    'S0': {
+        's': {
+            randMessageIds: [2, 3],
+            messageIds: [5],
+            endState: 'S1'
+        },
+        'ns': {
+            messageIds: [4, 5],
+            endState: 'S1'
+        }
+    }
+      'S1': {
         'nc1': {
             randMessageIds: [0, 1],
             messageIds: [5],
-            endState: 'S0'
+            endState: 'S1'
         },
         's': {
             randMessageIds: [2, 3],
             messageIds: [5],
-            endState: 'S0'
+            endState: 'S1'
         },
         'ns': {
             messageIds: [4, 5],
-            endState: 'S0'
+            endState: 'S1'
         }
     }
  };
