@@ -7,7 +7,7 @@ var EVENTS = {
     'g': ' associate is guilty'
 };
 
-// check nc1 first, if player did not comply than no need to check on the opponent
+// check nc1 first, if player did not comply then no need to check on the opponent
 // if player however complied, then we check associates' compliance next
 //Make into a constant to prevent modifications
 Object.freeze(EVENTS);
