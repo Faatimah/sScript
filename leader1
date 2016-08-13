@@ -41,7 +41,7 @@ var LEADER1_TRANSITION_MAP = {
     'S1': {
         'nc1': {
             randMessageIds: [1, 2],
-            messageIds: 11],
+            messageIds: [11],
             endState: 'S1'
         },
         'nc2': {
