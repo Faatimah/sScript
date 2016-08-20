@@ -1,0 +1,95 @@
+// need more than one option here, 
+// we look at all experts for which this.satisficingExperts[i] = true;
+// make a random selection of 2/3 from it
+// and we print out their description with OR to concatenate them
+	
+this.whatAreMyOptions = function()
+	
+	{
+		var myOptions = [];
+		var vals = recommender.presentExpertInformation;
+		var expertName = recommender.expertName;
+		console.log('Expert name is  ' + expertName + " " + vals);
+		var whyForOptions = [];
+		if(expertName == 'leader')
+		{
+			if(vals[1] == 1)
+			{
+				myOptions.push("Enforce cooperation by always playing 'A'.  <button class='button'>Explain</button>");
+				myOptions.push("If your associate does not cooperate, punish him by playing 'B'. This is a great solution as cooperation will give both of you high and equal payoffs. <button class='button'>Explain</button>");
+			}
+			else if(vals[1] == 2)
+			{
+				myOptions.push("Protect yourself! <button class='button'>Explain</button>");
+				myOptions.push("Always play 'B'. You are at risk of being exploited so you need to protect yourself. <button class='button'>Explain</button>");
+			}
+			else if(vals[1] == 3)
+			{
+				myOptions.push("Both of you can take turns receiving the highest possible payoff. 
+				myOptions.push("You do so by playing (B) when your associate plays (A) and vice versa. If your associate does not comply, punish him. This is a good solution as both of you will receive high and equal payoffs. <button class='button'>Explain</button>");
+			}
+			else if(vals[1] == 4)
+			{
+				myOptions.push("Alternate between the two actions.<button class='button'>Explain</button>");	
+				myOptions.push("You do so by both playing 'A' in one round and both playing 'B' in the proceeding round. If your associate does not comply, punish him. It's a fair solution as both of you will receive equal payoffs. <button class='button'>Explain</button>");
+			}
+			else if(vals[1] == 5)
+			{
+				myOptions.push("Always cooperate. <button class='button'>Explain</button>");
+				myOptions.push("You continue to play 'A' even though your associate does not reciprocate. This is okay as you still do better that not cooperating at all.  <button class='button'>Explain</button>");
+			}
+			else if(vals[1] == 6)
+			{
+				myOptions.push("Alternate between the two actions. <button class='button'>Explain</button>");
+				myOptions.push("If he is being cooperative, then alternate between (A,B)". You deserve a higher payoff if he lets you!  <button class='button'>Explain</button>");
+			}
+		}
+		else if(expertName == 'follower')
+		{
+			if(vals[1] == 1)
+			{
+				myOptions.push("Always cooperate by playing 'A'. <button class='button'>Explain</button>");
+				myOptions.push("It's a great solution as cooperation will give both of you high and equal payoffs.<button class='button'>Explain</button>");
+			}
+			else if(vals[1] == 2)
+			{
+				myOptions.push("Protect yourself, always play 'B' <button class='button'>Explain</button>");
+				myOptions.push("You are at risk of being exploited so you need to protect yourself. <button class='button'>Explain</button>");
+			}
+			else if(vals[1] == 3)
+			{
+				myOptions.push("Both of you can take turns receiving the highest possible payoff. <button class='button'>Explain</button>");
+				myOptions.push("You do so by playing (B) when your associate plays (A) and vice versa. It's a good solution as both of you will receive high and equal payoffs. <button class='button'>Explain</button>");
+			}
+			else if(vals[1] == 4)
+			{
+				myOptions.push("Alternate between the two actions. <button class='button'>Explain</button>");	
+				myOptions.push("You do so by both playing 'A' in one round and both playing 'B' in the proceeding round. It's a fair solution as both of you will receive equal payoffs. <button class='button'>Explain</button>");
+			}
+			else if(vals[1] == 5)
+			{
+				myOptions.push("Always cooperate by playing 'A' <button class='button'>Explain</button>");	
+				myOptions.push("It seems your associate is expecting you to comply with him. He is likely to punish you in in future rounds if you don't. This is okay as you still do better that not cooperating at all. <button class='button'>Explain</button>");
+			}
+			else if(vals[1] == 6)
+			{
+				myOptions.push("Alternate between the two actions. <button class='button'>Explain</button>");
+				myOptions.push("If he is being cooperative, then alternate between (A, B)". That way, you get a higher payoff.  <button class='button'>Explain</button>");
+			}
+		}
+		else if(expertName == 'minmax')
+		{
+			myOptions.push("Protect yourself! <button class='button'>Explain</button>");
+			myOptions.push("Always play 'B'. You are at risk of being exploited so you need to protect yourself. <button class='button'>Explain</button>");
+		}
+		else if(expertName == 'bestResponse')
+		{
+			myOptions.push("Play along with your associate. If he plays 'A', then reciprocate by playing 'A' too");
+			myOptions.push("If he does otherwise, then retaliate by playing 'B'. <button class='button'>Explain</button>");
+		}
+		else
+		{
+			myOptions.push("Text not yet implemented for state expert name " + expertName);
+		}
+		return [myOptions, whyForOptions];
+	}
