@@ -1,4 +1,4 @@
-//LEADER5 EXPERT (pure and generous) no 5: <(c;C); (c;D)>
+//LEADER5 EXPERT Actions: <(c;C); (c;D)> Payoff: 0.3, 0.8 (pure and fair/generous)
 
 var EVENTS = {
     'nc1': 'player did not comply',
