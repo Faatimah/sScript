@@ -1,4 +1,4 @@
-//FOLLOWER3 EXPERT (alt and fair) no 3: <(d,C), (c,D)>  
+//FOLLOWER3 EXPERT  Actions: <(d,C), (c,D)> Payoffs: 0.5, 0.5 (alt and fair)
 
 var EVENTS = {
     'nc1': 'player did not comply',
