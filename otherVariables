@@ -1,0 +1,37 @@
+var forgiveness, leniency, cooperation, defection;
+
+this.calculateOpponentState = function()
+	{
+		var history = jefePlusPlus.gameHistory;
+		if(history.length == 0)
+		{
+			return;
+		}
+		var lnt = 0;
+		var frg = 0;
+		var coop = 0;
+		var def = 0;
+		
+    for (var i = 2; i <history.length; i++)
+    {
+      if ((history[i-1][1] == 0) & (history[i][0] == 1)) // check 2 consecutive rounds
+      {
+        	lnt += 1;
+      }
+    }
+		
+		for(var i = 0; i < history.length; i++)
+		{
+			if(history[i-2][1] == 0) & (history[i-1][0] == 0) & (history[i][0] == 1) // check 3 consecutive rounds
+				{
+					frg += 1;
+				}	
+			}
+
+		}
+
+		cooperation = coop / history.length * 100;
+		defection = def / history.length * 100;
+		cooperation = cooperation.toFixed(2);
+		defection = defection.toFixed(2);
+	}
