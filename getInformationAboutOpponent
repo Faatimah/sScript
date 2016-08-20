@@ -1,0 +1,59 @@
+var getInformationAboutOpponentAtRoundWithProp = function(round, properties)
+	{
+		var opponentInfo = [];
+		var thresholdRound = 10;
+		if(round == 0)
+		{
+			opponentInfo.push('I can\'t say anything about the other player.');
+			opponentInfo.push('The game has just started');
+		}
+		else
+		{
+			var nice = properties.niceness;
+			var reciprocity = properties.reciprocity;
+			var reciprocateDefection = properties.reciprocateDefection;
+			
+			if(round < thresholdRound)
+			{
+				opponentInfo.push('The game is still quite fresh');
+				opponentInfo.push('I can\'t really say anything about the other player');
+				return opponentInfo;
+			}
+			else if(round < thresholdRound * 2)
+			{
+				opponentInfo.push('The game is still quite fresh but');
+			}
+			if(bully > 50)
+			{
+				opponentInfo.push('He seems to be a bully  <button class="button">Explain</button>');	
+			}
+			else
+			{
+				opponentInfo.push('He seems to be a nice guy <button class="button">Explain</button>');		
+			}
+			if(reciprocateDefection > 50)
+			{
+				opponentInfo.push('He also tries to reciprocate seemingly bad behaviour <button class="button">Explain</button>');
+			}
+			if(round > thresholdRound)
+			{
+				var isLeader = properties.opponentIsLeader;
+				if(isLeader)
+				{
+					opponentInfo.push('He is also quite assertive <button class="button">Explain</button>');
+				}
+				else
+				{
+					opponentInfo.push('He is quite passive <button class="button">Explain</button>');
+				}
+			}
+		}
+		return opponentInfo;
+	}
+
+	this.getInformationAboutOpponent = function()
+	{
+		var round = recommender.getRound();
+		var properties = recommender.getOpponnetProperties();
+		return getInformationAboutOpponentAtRoundWithProp(round, properties);
+	}
