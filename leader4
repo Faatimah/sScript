@@ -1,4 +1,4 @@
-//LEADER4 EXPERT (alt and fair but matching actions) no 4: <(c;C); (d;D)>
+//LEADER4 EXPERT Actions: <(c;C); (d;D)> Payoffs: 0.4, 0.4 (alt and fair but matching actions)
 
 var EVENTS = {
     'nc1': 'player did not comply',
