@@ -1,4 +1,4 @@
-//FOLLOWER2 EXPERT (Pure and Fair but defects) no 6: <(d,D)>
+//FOLLOWER2 EXPERT  Actions: <(d,D)>, Payoffs: 0.2, 0.2 (Pure and Fair but defects)
 
 var EVENTS = {
     'nc1': 'player did not comply',
