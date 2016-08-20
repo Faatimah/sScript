@@ -1,4 +1,4 @@
-//FOLLOWER5 EXPERT (pure and fair/generous) no 5: <(c,C), (c,D)>
+//FOLLOWER5 EXPERT Actions: <(c,C), (c,D)> Payoffs: 0.3, 0.8 (pure and fair/generous)
 
 var EVENTS = {
     'nc1': 'player did not comply',
