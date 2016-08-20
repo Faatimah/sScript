@@ -1,4 +1,4 @@
-//Follower1 EXPERT (Pure and Fair)
+//Follower1 EXPERT (Pure and Fair) no 2: <(c,C)>  
 
 var EVENTS = {
     'nc1': 'player did not comply',
