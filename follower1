@@ -1,4 +1,4 @@
-//Follower1 EXPERT (Pure and Fair) no 2: <(c,C)>  
+//Follower1 EXPERT  Actions: <(c,C)> Payoffs: 0.6, 0.6 (Pure and Fair)
 
 var EVENTS = {
     'nc1': 'player did not comply',
