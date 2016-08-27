@@ -2,6 +2,9 @@
 // we look at all experts for which this.satisficingExperts[i] = true;
 // make a random selection of 2/3 from it
 // and we print out their description with OR to concatenate them
+
+// INTRO: In this game, you can choose from a variety of strategies to play with your associate. The best strategy however, depends upon
+// 	   your associate's response. You can: 
 	
 this.whatAreMyOptions = function()
 	
