@@ -1,11 +1,11 @@
 var getInformationAboutOpponentAtRoundWithProp = function(round, properties)
 	{
 		var opponentInfo = [];
-		var thresholdRound = 10;
+		var thresholdRound = 5;
 		if(round == 0)
 		{
-			opponentInfo.push('I can\'t say anything about the other player.');
-			opponentInfo.push('The game has just started');
+			opponentInfo.push('I can\'t say anything about your associate yet.');
+			opponentInfo.push('The game has just started.');
 		}
 		else
 		{
@@ -15,21 +15,21 @@ var getInformationAboutOpponentAtRoundWithProp = function(round, properties)
 			
 			if(round < thresholdRound)
 			{
-				opponentInfo.push('The game is still quite fresh');
-				opponentInfo.push('I can\'t really say anything about the other player');
+				opponentInfo.push('It is still early in the game');
+				opponentInfo.push('I don\t know much about your assocaite');
 				return opponentInfo;
 			}
 			else if(round < thresholdRound * 2)
 			{
-				opponentInfo.push('The game is still quite fresh but');
+				opponentInfo.push('So far, ');
 			}
 			if(bully > 50)
 			{
-				opponentInfo.push('He seems to be a bully  <button class="button">Explain</button>');	
+				opponentInfo.push('So far, he\she seems to be unwilling to cooperate with you  <button class="button">Explain</button>');	
 			}
 			else
 			{
-				opponentInfo.push('He seems to be a nice guy <button class="button">Explain</button>');		
+				opponentInfo.push('So far, he\she seems willing to cooperate <button class="button">Explain</button>');		
 			}
 			if(reciprocateDefection > 50)
 			{
