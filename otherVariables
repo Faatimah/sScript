@@ -14,7 +14,7 @@ this.calculateOpponentState = function()
 		
     for (var i = 2; i <history.length; i++)
     {
-      if ((history[i-1][1] == 0) & (history[i][0] == 1)) // check 2 consecutive rounds
+      if ((history[i-1][0] == 1) & (history[i][1] == 0)) // check 2 consecutive rounds
       {
         	lnt += 1;
       }
@@ -22,7 +22,7 @@ this.calculateOpponentState = function()
 		
 		for(var i = 0; i < history.length; i++)
 		{
-			if(history[i-2][1] == 0) & (history[i-1][0] == 0) & (history[i][0] == 1) // check 3 consecutive rounds
+			if(history[i-2][0] == 1) & (history[i-1][1] == 1) & (history[i][0] == 1) // check 3 consecutive rounds
 				{
 					frg += 1;
 				}	
