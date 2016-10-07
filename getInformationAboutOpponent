@@ -16,7 +16,7 @@ var getInformationAboutOpponentAtRoundWithProp = function(round, properties)
 			if(round < thresholdRound)
 			{
 				opponentInfo.push('It is still early in the game');
-				opponentInfo.push('I don\t know much about your assocaite');
+				opponentInfo.push('I don\t know much about your associate');
 				return opponentInfo;
 			}
 			else if(round < thresholdRound * 2)
